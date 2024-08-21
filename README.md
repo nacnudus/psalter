@@ -12,3 +12,7 @@ https://dhanswers.ach.org/topic/creating-a-wordlist-from-text/#post-1762
 ```sh
 tr -sc '[A-Z][a-z]' '[\012*]' < psalmtext.txt | sort | uniq > wordlist.txt
 ```
+
+## Transcription and alignment
+
+Review https://github.com/nacnudus/audio-verse-splitter
