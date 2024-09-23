@@ -28,3 +28,9 @@ find audio/priory-1 -type f -name "timestamps.txt" | xargs -I {} bash -c 'cp "$1
 ```sh
 rsync -a --include '*/' --exclude '*' recordings/priory-1 "timestamps"
 ```
+
+## Split audio files at timestamps
+
+```sh
+find recordings/st-pauls-scott -type f -name "*.flac" | xargs -I {} bash -c './split.sh $1' -- {}
+```
