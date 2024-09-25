@@ -34,3 +34,9 @@ rsync -a --include '*/' --exclude '*' recordings/priory-1 "timestamps"
 ```sh
 find recordings/st-pauls-scott -type f -name "*.flac" | xargs -I {} bash -c './split.sh $1' -- {}
 ```
+
+## Calculate the actual durations of audio files
+
+```sh
+fd -I --exec sox {} -n stat 2>&1 | grep "Length" | awk '{print $3}' > durations.txt
+```
